@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <input type="number" id="numero">
+    </form>
+
+    <button id="botao">
+        Checar
+    </button>
+
+    <div id="resposta">
+
+    </div>
+    <script>
+        const campo = document.querySelector("#numero");
+        const botao = document.querySelector("#botao");
+        const resposta = document.querySelector("#resposta");
+
+        botao.addEventListener("click", () => checarNumero(campo.value));
+
+        function checarNumero(numero) {
+            if (numero % 2 == 0) {
+                resposta.innerHTML = "Par"
+            } else {
+                resposta.innerHTML = "Impar"
+            };
+        }
+    </script>
+</body>
+
+</html>
