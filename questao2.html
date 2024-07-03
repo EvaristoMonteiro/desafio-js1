@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <input type="number" id="numero1">
+        <input type="number" id="numero2">
+    </form>
+
+    <button id="botao">
+        Checar
+    </button>
+
+    <div id="resposta">
+
+    </div>
+    <script>
+        const campo1 = document.querySelector("#numero1");
+        const campo2 = document.querySelector("#numero2");
+        const botao = document.querySelector("#botao");
+        const resposta = document.querySelector("#resposta");
+
+        botao.addEventListener("click", () => checarNumero(campo1.value, campo2.value));
+
+        function checarNumero(numero1, numero2) {
+            if (numero1 > numero2) {
+                resposta.innerHTML = `${numero1} é maior que ${numero2}`
+            } else if (numero2 > numero1) {
+                resposta.innerHTML = `${numero2} é maior que ${numero1}`
+            } else {
+                resposta.innerHTML = `São iguais`
+            };
+        }
+    </script>
+</body>
+
+</html>

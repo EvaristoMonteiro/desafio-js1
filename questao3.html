@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label>Insira seu ano de nascimento</label>
+        <input type="number" id="anoDeNascimento" maxlength="4">
+    </form>
+
+    <button id="botao">
+        Checar
+    </button>
+
+    <div id="resposta">
+
+    </div>
+    <script>
+        const campo = document.querySelector("#anoDeNascimento");
+        const botao = document.querySelector("#botao");
+        const resposta = document.querySelector("#resposta");
+
+        botao.addEventListener("click", () => checarData(campo.value));
+
+        function checarData(data) {
+            const hoje = new Date();
+            const idadeParaVotar = hoje.getFullYear() - 16;
+            if (idadeParaVotar - data >= 0) {
+                resposta.innerHTML = "Vota"
+            } else {
+                resposta.innerHTML = "Não Vota"
+            };
+        }
+    </script>
+</body>
+
+</html>
