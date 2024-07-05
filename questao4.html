@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="">Salario</label>
+        <input type="number" id="salario">
+        <label for="">Ajuste (%)</label>
+        <input type="number" id="percentual">
+    </form>
+
+    <button id="botao">
+        Checar
+    </button>
+
+    <div id="resposta">
+        Novo Salário:
+    </div>
+    <script>
+        const salario = document.querySelector("#salario");
+        const ajuste = document.querySelector("#percentual");
+        const botao = document.querySelector("#botao");
+        const resposta = document.querySelector("#resposta");
+
+        botao.addEventListener("click", () => ajusteSalarial(parseInt(salario.value, 10), parseInt(ajuste.value, 10)));
+
+        function ajusteSalarial(salario, ajuste) {
+            resposta.innerHTML = salario + (salario * (ajuste / 100));
+        }
+    </script>
+</body>
+
+</html>

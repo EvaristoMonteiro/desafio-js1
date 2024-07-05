@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <input type="text" id="palavra">
+    </form>
+
+    <button id="botao">
+        Tornar Maiusculo
+    </button>
+
+    <div id="resposta">
+
+    </div>
+    <script>
+        const campo = document.querySelector("#palavra");
+        const botao = document.querySelector("#botao");
+        const resposta = document.querySelector("#resposta");
+
+        botao.addEventListener("click", () => tornarMaiusculo(campo.value));
+
+        function tornarMaiusculo(string) {
+            let result = string.charAt(0).toUpperCase() + string.slice(1, string.length - 1) + string.charAt(string.length - 1).toUpperCase();
+            resposta.innerHTML = result;
+        }
+    </script>
+</body>
+
+</html>

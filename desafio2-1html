@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Desafio 2.1</title>
+</head>
+
+<body>
+    <button onclick="login()">Login</button>
+    <pre id="output"></pre>
+    <script src="script.js"></script>
+</body>
+
+</html>

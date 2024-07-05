@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <input type="text" id="numero">
+    </form>
+
+    <button id="botao">
+        Mostrar quantidade de maiores de 50
+    </button>
+
+    <div id="resposta">
+
+    </div>
+    <script>
+        const campo = document.querySelector("#numero");
+        const botao = document.querySelector("#botao");
+        const resposta = document.querySelector("#resposta");
+
+        botao.addEventListener("click", () => organizarNumeros(campo.value));
+
+        function organizarNumeros(string) {
+            const numbers = string.split("/");
+            let result = 0;
+            numbers.forEach(number => { if (number > 50) result++ });
+            resposta.innerHTML = result;
+        }
+    </script>
+</body>
+
+</html>
